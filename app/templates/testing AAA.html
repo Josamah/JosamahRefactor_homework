@@ -1,0 +1,214 @@
+<!doctype html>
+
+{% extends "base.html" %}
+{% block content %}
+class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta content="" name="description">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+
+  <meta content="" property="og:title">
+  <meta content="" property="og:type">
+  <meta content="" property="og:url">
+  <meta content="" property="og:image">
+
+  <link href="../site.webmanifest" rel="manifest">
+  <link href="../icon.png" rel="apple-touch-icon">
+  <!-- Place favicon.ico in the root directory -->
+
+   <link href="css/normalize.css" rel="stylesheet">
+  <link href="css/main.css" rel="stylesheet">
+
+  <meta content="#fafafa" name="theme-color">
+</head>
+
+<body>
+
+<!-- Add your site or application content here -->
+<div id="wrapper" class="margin_left_right_auto">
+  <div id="header">
+    <div id="logo" class="gr_width_small float_left">
+      <a href="index.html"><img src="img/img_5.png" height="120" width="369"></a>
+    </div>
+    <div id="menu" class="gr_width_large float_left">
+      <menu class="float_right reset_margin_padding">
+        <li><a href="index.html">pylint</a></li>
+        <li><a href="testing AAA.html">AAA testing</a></li>
+        <li><a href="OOPs.html">OOPs</a></li>
+        <li><a href="SOLID Object Oriented Design.html">SOLID Objected Oriented Design</a></li>
+      </menu>
+    </div>
+    <div id="masthead" class="clear_float mastheadTopMargin">
+    </div>
+  </div>
+  <div id="main">
+    <div id="content" class="float_left gr_width_large">
+      <div id="article_title">
+        <h1 class="reset_margin_padding">ARRANGE-ACT-ASSERT</h1>
+      </div>
+      <div id="article_body">
+        <p>
+          ARRANGE-ACT-ASSERT: A PATTERN FOR WRITING GOOD TESTS
+        </p>
+        <p>
+          A test is a procedure that exercises a behavior to determine if the behavior functions correctly. There are several different kinds of tests, like unit tests, integration tests, or end-to-end tests, but all functional tests do the same basic thing: they try something and report PASS or FAIL.
+        </p>
+        <p>
+          Testing provides an empirical feedback loop for development. That’s how testing keeps us safe. With tests, we know when things break. Without tests, coding can be dangerous. We don’t want to deploy big ol’ bugs!
+        </p>
+        <p>
+          So, if we intend to spend time writing tests, how can we write good tests? There’s a simple but powerful pattern I like to follow: Arrange-Act-Assert.
+        </p>
+        <p>
+          The Pattern
+        </p>
+        <p>
+          Arrange-Act-Assert is a great way to structure test cases. It prescribes an order of operations:
+        </p>
+        <p>
+          1. Arrange inputs and targets. Arrange steps should set up the test case. Does the test require any objects or special settings? Does it need to prep a database? Does it need to log into a web app? Handle all of these operations at the start of the test.
+        </p>
+        <p>
+          2. Act on the target behavior. Act steps should cover the main thing to be tested. This could be calling a function or method, calling a REST API, or interacting with a web page. Keep actions focused on the target behavior.
+        </p>
+        <p>
+          3.Assert expected outcomes. Act steps should elicit some sort of response. Assert steps verify the goodness or badness of that response. Sometimes, assertions are as simple as checking numeric or string values. Other times, they may require checking multiple facets of a system. Assertions will ultimately determine if the test passes or fails.
+        </p>
+        <p>
+          Behavior-Driven Development follows the Arrange-Act-Assert pattern by another name: Given-When-Then. The Gherkin language uses Given-When-Then steps to specify behaviors in scenarios. Given-When-Then is essentially the same formula as Arrange-Act-Assert.
+        </p>
+        <p>
+          Every major programming language has at least one test framework. Frameworks like JUnit, NUnit, Cucumber, and (my favorite) pytest enable you, as the programmer, to automate tests, execute suites, and report results. However, the framework itself doesn’t make a test case “good” or “bad.” You, as the tester, must know how to write good tests!
+        </p>
+        <p>
+          Let’s look at how to apply the Arrange-Act-Assert pattern in Python code. I’ll use pytest for demonstration.
+        </p>
+        <p>
+          Unit Testing
+        </p>
+        <p>
+          Here’s a basic unit test for Python’s absolute value function:
+        </p>
+        <p>
+        <div class="colored_div">
+          1  def test_abs_for_a_negative_number():
+          2
+          3 # Arrange
+          4 negative = -5
+          5
+          6  # Act
+          7  answer = abs(negative)
+          8
+          9  # Assert
+          10 assert answer == 5
+        </div>
+        </p>
+        <p>
+          This test may seem trivial, but we can use it to illustrate our pattern. I like to write comments denoting each phase of the test case as well
+        </p>
+        <p>
+          1.The Arrange step creates a variable named “negative” for testing.
+          2.The Act step calls the “abs” function using the “negative” variable and stores the returned value in a variable named “answer.”
+          3.The Assert step verifies that “answer” is a positive value.
+        </p>
+        <p>
+          Feature Testing
+        </p>
+        <p>
+          Let’s kick it up a notch with a more complicated test. This next example tests the DuckDuckGo Instant Answer API using the requests package:
+        </p>
+        <p>
+        <div class="colored_div">
+          1  import requests
+          2
+          3  def test_duckduckgo_instant_answer_api_search():
+          4
+          5  # Arrange
+          6  url = 'https://api.duckduckgo.com/?q=python+programming&format=json'
+          7
+          8  # Act
+          9  response = requests.get(url)
+          10 body = response.json()
+          11
+          12 # Assert
+          13 assert response.status_code == 200
+          14 assert 'Python' in body['AbstractText']
+        </div>
+        </p>
+        <p>
+          We can clearly see that the Arrange-Act-Assert pattern works for feature tests as well as unit tests.
+        </p>
+        <p>
+          1.The Arrange step forms the endpoint URL for searching for “Python Programming.” Notice the base URL and the query parameters.
+          2.The Act steps call the API using the URL using “requests” and then parse the response’s body from JSON into a Python dictionary.
+          3.The Assert steps then verify that the HTTP status code was 200, meaning “OK” or “success,” and that the word “Python” appears somewhere in the response’s abstract text.
+        </p>
+        <p>
+          Importance of AAA Testing
+        </p>
+        <p>
+          The process becomes agile
+        </p>
+        <p>
+          This is the main benefit of unit testing. When you add more features to any software, you might need to make changes to the old design and code, and this can be expensive as well as risky. If you use the unit testing methodology, then this can save a lot of time and can make the whole process much faster and easier.
+        </p>
+        <p>
+          Quality of Code
+        </p>
+        <p>
+          Unit testing significantly improves code quality. It helps developers to identify the smallest defects that might be present in the units before they go for integration testing.
+        </p>
+        <p></p>
+        Find Software Bugs Easily
+        <p>
+          Unit testing helps identify all kinds of issues with the software at a very early stage. Software developers can then work on those issues first before progressing any further. The main advantage of this is when the issues are resolved at an early stage, no other part of the software is impacted. This leads to increased efficiency, reduced downtime, and reduced costs that would otherwise arise as a result of the whole design process stalling.
+        </p>
+        <p>
+          Facilitates Change
+        </p>
+        <p>
+          Refactoring the code or updating the system library becomes much easier when you test each component of the software individually. If there are any problems, they are detected early on and making changes to the system thus becomes much easier. The accuracy of each unit is verified before it moves on to the next phase. This means that the unit is proven to be in proper working order before it’s integrated with other modules.
+        </p>
+        <p>
+          Debugging Process
+        </p>
+        <p>
+          The debugging process can be simplified to a great extent by unit testing. If a certain test fails, then only the latest changes that have been made to the code need to be debugged.
+        </p>
+        </p>
+
+
+      </div>
+    </div>
+    <div id="sidebar" class="float_left gr_width_small">
+      <div id="side_photo" class="margin_left_right_auto">
+       <img src="{{ url_for('static', filename='images/img_5.png') }}"> height="346" width="320">
+      </div>
+    </div>
+  </div>
+  <div id="footer" class="clear_float text_center">
+    © Joshua Samah
+    <script type="text/javascript">
+      var d= new Date()
+      document.write(d.getFullYear())
+
+    </script>
+    <a href="http://validator.w3.org/check/referer"><img src="https://www.w3.org/Icons/valid-html401-blue"></img></a>
+  </div>
+</div>
+
+<script src="../js/vendor/modernizr-3.11.2.min.js"></script>
+<script src="../js/plugins.js"></script>
+<script src="../js/main.js"></script>
+
+<!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+<script>
+  window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+  ga('create', 'UA-XXXXX-Y', 'auto'); ga('set', 'anonymizeIp', true); ga('set', 'transport', 'beacon'); ga('send', 'pageview')
+</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+</body>
+{% endblock %}

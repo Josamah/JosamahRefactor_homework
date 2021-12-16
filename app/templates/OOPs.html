@@ -1,0 +1,205 @@
+<!doctype html>
+class="no-js" lang="">
+{% extends "base.html" %}
+{% block content %}
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta content="" name="description">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+
+  <meta content="" property="og:title">
+  <meta content="" property="og:type">
+  <meta content="" property="og:url">
+  <meta content="" property="og:image">
+
+  <link href="../site.webmanifest" rel="manifest">
+  <link href="../icon.png" rel="apple-touch-icon">
+  <!-- Place favicon.ico in the root directory -->
+
+   <link href="css/normalize.css" rel="stylesheet">
+  <link href="css/main.css" rel="stylesheet">
+
+  <meta content="#fafafa" name="theme-color">
+</head>
+
+<body>
+
+<!-- Add your site or application content here -->
+<div id="wrapper" class="margin_left_right_auto">
+  <div id="header">
+    <div id="logo" class="gr_width_small float_left">
+     <a href="index.html"><img src="img/img_8.png" height="120" width="369"></a>
+    </div>
+    <div id="menu" class="gr_width_large float_left">
+      <menu class="float_right reset_margin_padding">
+        <li><a href="index.html">pylint</a></li>
+        <li><a href="testing%20AAA.html">AAA testing</a></li>
+        <li><a href="OOPs.html">OOPs</a></li>
+        <li><a href="SOLID Object Oriented Design.html">SOLID Objected Oriented Design</a></li>
+      </menu>
+    </div>
+    <div id="masthead" class="clear_float mastheadTopMargin">
+    </div>
+  </div>
+  <div id="main">
+    <div id="content" class="float_left gr_width_large">
+      <div id="article_title">
+        <h1 class="reset_margin_padding">What is OOP?</h1>
+      </div>
+      <div id="article_body">
+        <p>
+          Object Oriented Programming
+        </p>
+        <p>
+          Python is a multi-paradigm programming language. It supports different programming approaches.
+        </p>
+        <p>
+          One of the popular approaches to solve a programming problem is by creating objects. This is known as Object-Oriented Programming (OOP).
+          An object has two characteristics:
+
+          attributes
+          behavior
+          Let's take an example:
+
+          A parrot is an object, as it has the following properties:
+
+          name, age, color as attributes
+          singing, dancing as behavior
+          The concept of OOP in Python focuses on creating reusable code. This concept is also known as DRY (Don't Repeat Yourself).
+        </p>
+        <p>
+          OOP TERMINOLOGIES
+        </p>
+        <p>
+          FACTORY: Factory method is a creational design pattern which solves the problem of creating product objects without specifying their concrete classes. Factory Method defines a method, which should be used for creating objects instead of direct constructor call ( new operator).
+        </p>
+        <p>
+          OBJECT: An object (instance) is an instantiation of a class. When class is defined, only the description for the object is defined. Therefore, no memory or storage is allocated.
+        </p>
+        <p>
+        Creating Class and Object in Python
+        </p>
+        <p>
+        <div class="colored_div">
+          class Parrot:
+
+          # class attribute
+          species = "bird"
+
+          # instance attribute
+          def __init__(self, name, age):
+          self.name = name
+          self.age = age
+
+          # instantiate the Parrot class
+          blu = Parrot("Blu", 10)
+          woo = Parrot("Woo", 15)
+
+          # access the class attributes
+          print("Blu is a {}".format(blu.__class__.species))
+          print("Woo is also a {}".format(woo.__class__.species))
+
+          # access the instance attributes
+          print("{} is {} years old".format( blu.name, blu.age))
+          print("{} is {} years old".format( woo.name, woo.age))
+        </div>
+        </p>
+        <p>
+          INSTANTIATION: A single object of a class / the process of creating an object from a class.
+        </p>
+        <p>
+          CLASS: A class is a blueprint for the object.
+
+          We can think of class as a sketch of a parrot with labels. It contains all the details about the name, colors, size etc. Based on these descriptions, we can study about the parrot. Here, a parrot is an object.
+        </p>
+        <p>
+          The example for class of parrot can be :
+        </p>
+        <p>
+        <div class="colored_div">
+          class Parrot:
+          pass
+      </div>
+        </p>
+        <p>
+          NAMESPACE: A namespace is basically a system to make sure that all the names in a program are unique and can be used without any conflict. You might already know that everything in Python—like strings, lists, functions, etc. —is an object.
+        </p>
+        <p>
+          CONSTRUCTOR: Constructors are generally used for instantiating an object. The task of constructors is to initialize(assign values) to the data members of the class when an object of the class is created. In Python the __init__() method is called the constructor and is always called when an object is created.
+        </p>
+        <p>
+          FIXTURE: Fixtures define the steps and data that constitute the arrange phase of a test (see Anatomy of a test). In pytest, they are functions you define that serve this purpose. They can also be used to define a test's act phase; this is a powerful technique for designing more complex tests.
+        </p>
+        <p>
+          TYPE HINT: Type hinting is a formal solution to statically indicate the type of a value within your Python code. It was specified in PEP 484 and introduced in Python 3.5.
+        </p>
+        <p>
+          TYPE CAST: Type casting is a method used to change the variables/ values declared in a certain data type into a different data type to match the operation required to be performed by the code snippet. In python, this feature can be accomplished by using constructor functions like int(), string(), float(), etc.
+        </p>
+        <p>
+          UNIT TEST: Unit testing is a software testing method by which individual units of source code are put under various tests to determine whether they are fit for use (Source). It determines and ascertains the quality of your code.
+        </p>
+        <p>
+          STATIC: Static type checks are performed without running the program. In most statically typed languages, for instance C and Java, this is done as your program is compiled. With static typing, variables generally are not allowed to change types, although mechanisms for casting a variable to a different type may exist.
+        </p>
+        <p>
+          CLASS METHOD: A class method is a method which is bound to the class and not the object of the class. They have the access to the state of the class as it takes a class parameter that points to the class and not the object instance. It can modify a class state that would apply across all the instances of the class.
+        </p>
+        <p>
+          FACADE: Facade is a structural design pattern that provides a simplified (but limited) interface to a complex system of classes, library or framework. While Facade decreases the overall complexity of the application, it also helps to move unwanted dependencies to one place
+        </p>
+        <p>
+          DESIGN PATTERN: Design Patterns is the most essential part of Software Engineering, as they provide the general repeatable solution to a commonly occurring problem in software design. They usually represent some of the best practices adopted by experienced object-oriented software developers
+        </p>
+        <p>
+          METHOD: A method is a function that “belongs to” an object. (In Python, the term method is not unique to class instances: other object types can have methods as well. For example, list objects have methods called append, insert, remove, sort, and so on.
+        </p>
+        <p>
+          PROPERTY: property() is a built-in function that creates and returns a property object. A property object has three methods, getter(), setter(), and delete().
+        </p>
+        <p>
+          INHERITANCE: Inheritance is a way of creating a new class for using details of an existing class without modifying it. The newly formed class is a derived class (or child class). Similarly, the existing class is a base class (or parent class).
+        </p>
+        <p>
+          ENCAPSULATION: Using OOP in Python, we can restrict access to methods and variables. This prevents data from direct modification which is called encapsulation. In Python, we denote private attributes using underscore as the prefix i.e single _ or double __.
+        </p>
+        <p>
+          POLYMORPHISM: Polymorphism is an ability (in OOP) to use a common interface for multiple forms (data types).
+        </p>
+
+        </p>
+
+
+      </div>
+    </div>
+    <div id="sidebar" class="float_left gr_width_small">
+      <div id="side_photo" class="margin_left_right_auto">
+        <img src="img/img_6.png" height="346" width="320">
+      </div>
+    </div>
+  </div>
+  <div id="footer" class="clear_float text_center">
+    © Joshua Samah
+    <script type="text/javascript">
+      var d= new Date()
+      document.write(d.getFullYear())
+
+    </script>
+    <a href="http://validator.w3.org/check/referer"><img src="https://www.w3.org/Icons/valid-html401-blue"></img></a>
+  </div>
+</div>
+
+<script src="../js/vendor/modernizr-3.11.2.min.js"></script>
+<script src="../js/plugins.js"></script>
+<script src="../js/main.js"></script>
+
+<!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+<script>
+  window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+  ga('create', 'UA-XXXXX-Y', 'auto'); ga('set', 'anonymizeIp', true); ga('set', 'transport', 'beacon'); ga('send', 'pageview')
+</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+</body>
+{% endblock %}
+
